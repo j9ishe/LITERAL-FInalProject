@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+  <div>
+    <h1>{{post?.title}}</h1>
+    </div>
+    <img src={{post?.img}}>
+    <h2>Author: {{post?.auth}}</h2>
+    <p>{{post?.description}}</p>
+    <p>{{post?.date}}</p>
+    <button class="btn btn-primary" (click)="likePost()"><p>{{post?.likes}}</p>Like</button>
+
+
+    <div *ngFor="let comment of post?.comments">
+      <p>{{comment}}</p>
+    </div>
+    <form (ngSubmit)="addComment()">
+      <input type="text" [(ngModel)]="newComment" name="newComment">
+      <button class="btn btn-success" type="submit">Add Comment</button>
+
+    </form>
+    <button class="btn btn-warning" (click)="editButton()">Edit</button>
+    <button class="btn btn-danger" (click)="deleteButton()">Delete</button>
+
+
+
+</body>
+</html>
+

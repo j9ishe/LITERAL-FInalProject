@@ -1,0 +1,13 @@
+nav{
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  height: 65px;
+  top: 0;
+  border-radius: 0%;
+}
+a{
+  font-size: 20px;
+  align-items: center;
+  align-content: center;
+}
