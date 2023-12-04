@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
+<header class="header">
+  <a routerLink="post-list" class="logo">Logo</a>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Cats</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a routerLink="post-list">Home</a></li>
-      <li><a routerLink="post-add">Create</a></li>
-      <!-- <li><a (click)="onSave()">Save</a></li> -->
-      <!-- <li><a (click)="onFetch()">Fetch</a></li> -->
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar">
+    <button class="button-74" routerLink="post-add" role="button">Create</button>
+
+  </nav>
+</header>
 
 </body>
 </html>
+
+

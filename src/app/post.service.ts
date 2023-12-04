@@ -39,6 +39,7 @@ export class PostService {
   ];
 
   getPost() {
+    location.reload;
     return this.listofpost;
   }
   addPost(post:Post) {

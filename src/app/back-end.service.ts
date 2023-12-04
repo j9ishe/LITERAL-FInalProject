@@ -10,6 +10,8 @@ import { tap } from 'rxjs';
 export class BackEndService {
 
   constructor(private postservice: PostService, private http: HttpClient) { }
+  posts: Post[] = [];
+
 
   saveData() {
     const listofpost: Post[] = this.postservice.getPost();
@@ -31,5 +33,10 @@ fetchData(){
       console.log('listofpost')
     }));
 
+}
+ngOnInit() {
+  this.fetchData().subscribe((data: Post[]) => {
+    this.posts = data;
+  });
 }
 }

@@ -9,6 +9,11 @@ import { PostListComponent } from './post-list/post-list.component';
 import { Routes,RouterModule, RouteReuseStrategy } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const routes: Routes = [
@@ -34,8 +39,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     HttpClientModule,
-
-
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -64,6 +64,7 @@ export class PostEditComponent {
       this.postService.addPost(post);
       this.backendservice.saveData();
       alert('Posted')
+
     }
     this.router.navigate(['post-list'])
 

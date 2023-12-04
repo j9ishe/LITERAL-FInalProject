@@ -1,37 +1,51 @@
-<h3 class="font-weight-bold" *ngIf="editMode==false">Create Post</h3>
-<h3 class="font-weight-bold"  *ngIf="editMode==true">Edit Post</h3>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label class="font-weight-bold">Title</label>
-        <input
-            type="text"
-            class="form-control"
-            placeholder="title"
-            formControlName="title"
-        />
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Example</title>
+</head>
+<body>
+  <h3 class="font-weight-bold" *ngIf="editMode==false">Create Post</h3>
+  <h3 class="font-weight-bold"  *ngIf="editMode==true">Edit Post</h3>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label class="font-weight-bold">Title</label>
+          <input
+              type="text"
+              class="form-control"
+              placeholder="title"
+              formControlName="title"
+          />
+      </div>
 
-    <div class="form-group">
-        <label class="font-weight-bold">Image Path</label>
-        <input
-            type="text"
-            class="form-control"
-            placeholder="img path"
-            formControlName="imgPath"
-        />
-            <img src="{{form.value.imgPath}}" class="img-responsive"/>
-    </div>
+      <div class="form-group">
+          <label class="font-weight-bold">Image Path</label>
+          <input
+              type="text"
+              class="form-control"
+              placeholder="img path"
+              formControlName="imgPath"
+          />
+              <img src="{{form.value.imgPath}}" class="img-responsive"/>
+      </div>
 
-    <div class="form-group">
-        <label class="font-weight-bold">Description</label>
-        <textarea
-            type="text"
-            class="form-control"
-            placeholder="description"
-            formControlName="description"
-        ></textarea>
-    </div>
+      <div class="form-group">
+          <label class="font-weight-bold">Description</label>
+          <textarea
+              type="text"
+              class="form-control"
+              placeholder="description"
+              formControlName="description"
+          ></textarea>
+      </div>
 
-    <button type="submit" class="btn btn-primary font-weight-bold" [disabled]="form.invalid">Save</button>
-    <button type="reset" class="btn btn-danger font-weight-bold">Clear</button>
-</form>
+      <button type="submit" class="btn btn-primary font-weight-bold" [disabled]="form.invalid">Save</button>
+      <button type="reset" class="btn btn-danger font-weight-bold">Clear</button>
+  </form>
+
+</body>
+</html>
+
+

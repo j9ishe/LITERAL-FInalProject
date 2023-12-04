@@ -16,6 +16,7 @@ export class PostListComponent {
   ngOnInit(): void {
     this.backendservice.fetchData().subscribe((posts) => {
       this.listofpost = posts;
+      
     });
   }
 }
