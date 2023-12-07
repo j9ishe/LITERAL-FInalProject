@@ -13,11 +13,18 @@ export class PostListComponent {
   constructor(private PostService: PostService, private backendservice: BackEndService) { }
 
 
+  // ngOnInit(): void {
+  //   this.listofpost = this.PostService.getPost();
+  //   this.backendservice.fetchData().subscribe((posts) => {
+  //   this.listofpost = posts;
+
+  // });
+  // }
   ngOnInit(): void {
-    this.backendservice.fetchData().subscribe((posts) => {
+    this.PostService.getPost().subscribe(posts => {
       this.listofpost = posts;
-      
     });
   }
-}
+  }
+
 

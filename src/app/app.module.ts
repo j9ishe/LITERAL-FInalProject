@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 const routes: Routes = [
@@ -43,7 +45,8 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

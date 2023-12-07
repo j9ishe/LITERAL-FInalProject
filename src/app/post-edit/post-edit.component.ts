@@ -4,6 +4,8 @@ import { PostService } from '../post.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Post } from '../post.model';
 import { BackEndService } from '../back-end.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-post-edit',
@@ -18,7 +20,8 @@ export class PostEditComponent {
     private postService: PostService,
     private router: Router,
     private actRoute: ActivatedRoute,
-    private backendservice: BackEndService) { }
+    private backendservice: BackEndService,
+    private snackBar:MatSnackBar) { }
 
 
   ngOnInit(): void {
@@ -57,13 +60,19 @@ export class PostEditComponent {
     if (this.editMode == true) {
       this.postService.updatePost(this.index, post);
       this.backendservice.saveData();
-      alert('Post Edited')
+      this.snackBar.open('Updated', '', {
+        duration: 5000,
+        verticalPosition: 'top'
+      })
 
     }
     else {
       this.postService.addPost(post);
       this.backendservice.saveData();
-      alert('Posted')
+      this.snackBar.open('Posted', '', {
+        duration: 5000,
+        verticalPosition: 'top'
+      })
 
     }
     this.router.navigate(['post-list'])

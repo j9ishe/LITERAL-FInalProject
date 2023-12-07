@@ -8,14 +8,13 @@
 </head>
 <body>
   <div>
+
     <h1>{{post?.title}}</h1>
-    </div>
     <img src={{post?.img}}>
     <h2>Author: {{post?.auth}}</h2>
     <p>{{post?.description}}</p>
     <p>{{post?.date}}</p>
     <button class="btn btn-primary" (click)="likePost()"><p>{{post?.likes}}</p>Like</button>
-
 
     <form (ngSubmit)="addComment()">
       <button class="btn btn-success" type="submit">Add Comment</button>
@@ -23,10 +22,10 @@
       <div *ngFor="let comment of post?.comments">
         <p>{{comment}}</p>
       </div>
-
     </form>
     <button class="btn btn-warning" (click)="editButton()">Edit</button>
     <button class="btn btn-danger" (click)="deleteButton()">Delete</button>
+  </div>
 
 
 
