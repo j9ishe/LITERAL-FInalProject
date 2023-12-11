@@ -7,8 +7,11 @@
 
 </head>
 <body>
+  <div class="card">
+    <app-post *ngFor="let post of listofpost; let i = index;"[post]="post"[index]="i"></app-post>
+
+  </div>
 
   </body>
 </html>
 
-<app-post *ngFor="let post of listofpost; let i = index;"[post]="post"[index]="i"></app-post>

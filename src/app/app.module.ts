@@ -15,7 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 const routes: Routes = [
@@ -46,7 +46,8 @@ const routes: Routes = [
     MatButtonModule,
     MatDividerModule,
     FontAwesomeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

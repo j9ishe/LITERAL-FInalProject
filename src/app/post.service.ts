@@ -32,7 +32,6 @@ export class PostService {
   setPosts(listofpost: Post[]) {
     this.listofpost = listofpost;
     this.listChangeEvent.emit(listofpost);
-
   }
 }
 

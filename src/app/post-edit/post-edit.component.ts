@@ -51,32 +51,29 @@ export class PostEditComponent {
     });
   }
   onSubmit() {
-
+    const like = this.form.value.like;
     const title = this.form.value.title;
     const imgPath = this.form.value.imgPath;
     const description = this.form.value.description;
-    const post: Post = new Post(title, imgPath, 'Rey Gabriel L. Literal', description, new Date());
+    const post: Post = new Post(title, imgPath, 'Rey Gabriel L. Literal', description, new Date(), like);
 
     if (this.editMode == true) {
       this.postService.updatePost(this.index, post);
       this.backendservice.saveData();
       this.snackBar.open('Updated', '', {
         duration: 5000,
-        verticalPosition: 'top'
+        verticalPosition: 'bottom'
       })
-
     }
     else {
       this.postService.addPost(post);
       this.backendservice.saveData();
       this.snackBar.open('Posted', '', {
         duration: 5000,
-        verticalPosition: 'top'
+        verticalPosition: 'bottom'
       })
-
     }
     this.router.navigate(['post-list'])
-
   }
 
 }

@@ -3,13 +3,30 @@ import { Post } from '../post.model';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
 import { BackEndService } from '../back-end.service';
+import {
+  CdkDragDrop,
+  CdkDropList,
+  CdkDragPreview,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
+import {
+  ViewChild,
+  TemplateRef,
+  AfterViewInit,
+  ViewContainerRef,
+  OnDestroy,
+} from '@angular/core';
+import {Overlay, OverlayRef} from '@angular/cdk/overlay';
+import {TemplatePortal} from '@angular/cdk/portal';
+import {CdkDrag} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
 })
 export class PostComponent {
+  listofpost: Post[] = [];
   @Input() post?:Post;
   @Input() index: number = 0;
   newComment: string = '';
@@ -38,6 +55,9 @@ export class PostComponent {
         this.backendservice.saveData();
         this.newComment = '';
       }
+    }
+    drop(event: CdkDragDrop<{title: string; poster: string}[]>) {
+      moveItemInArray(this.listofpost, event.previousIndex, event.currentIndex);
     }
 
 }

@@ -2,21 +2,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: 10px;
 }
 .card{
   align-items: center;
   display: flex;
   justify-content: center;
-  width: 500px;
-  height: 500px;
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
+
 }
 .card-img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 400px;
+  height:400px;
+  object-fit: cover;
 }
 .facebook-post {
   background-color: #fff;
@@ -24,7 +24,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 500px;
-  width: 100%; /* Adjust the width as needed */
+  width: 100%;
 }
 
 .post-header {
@@ -106,22 +106,23 @@ h1, p.post-description {
 .post-options {
   margin-top: 10px;
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
 }
 
 .btn-edit,
 .btn-delete {
-  background-color: #f2b632;
+  background-color:  #A076F9;
   color: #fff;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
+  margin: 2px;
 }
 
 .btn-edit:hover,
 .btn-delete:hover {
-  background-color: #d49a25;
+  background-color:  #A076F9;
 }
 .post-likes {
   margin-top: 15px;
@@ -129,6 +130,9 @@ h1, p.post-description {
 
 .post-comments {
   margin-top: 15px;
+}
+.likes-amount{
+  padding-right: 20px;
 }
 .like-button .heart-icon {
   height: 100px;
@@ -176,3 +180,59 @@ h1, p.post-description {
   font-weight: 900;
   margin-left: 6px;
 }
+/* .card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+} */
+.example-list {
+  width: 500px;
+  max-width: 100%;
+  border: solid 3px #A076F9;
+  min-height: 60px;
+  display: block;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.example-box {
+  padding: 10px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+

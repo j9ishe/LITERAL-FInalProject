@@ -1,49 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
 <body>
-  <div class="facebook-post">
-    <div class="post-header">
-      <img src="../assets/images/profile-1.jpeg" alt="Post Image">
-      <div class="post-info">
-        <h2>{{post?.auth}}</h2>
-        <p>{{post?.date}}</p>
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" cdkDrag>
+      <div class="post-header">
+        <img src="../assets/images/profile-1.jpeg" alt="Post Image">
+        <div class="post-info">
+          <h2>{{post?.title}}</h2>
+          <p>{{post?.date | date:'EEEE, MMMM d y'}}</p>
+        </div>
+      </div>
+      <div class="like-button">
+        <div class="heart-bg">
+          <div class="heart-icon" (click)="likePost()"></div>
+        </div>
+        <div class="likes-amount">{{post?.likes}}</div>
+        <button class="btn btn-edit" (click)="editButton()">Edit</button>
+          <button class="btn btn-delete" (click)="deleteButton()">Delete</button>
+      </div>
+      <div *cdkDragPreview class="facebook-post">
+        <div class="post-header">
+          <img src="../assets/images/profile-1.jpeg" alt="Post Image">
+          <div class="post-info">
+            <h2>{{post?.auth}}</h2>
+            <p>{{post?.date | date:'EEEE, MMMM d y'}}</p>
+          </div>
+        </div>
+        <h1>{{post?.title}}</h1>
+        <div class="card">
+          <img src="{{post?.img}}">
+        </div>
+        <p class="post-description">{{post?.description}}</p>
+          <form (ngSubmit)="addComment()" class="comment-form">
+            <input type="text" [(ngModel)]="newComment" name="newComment" placeholder="Write a comment...">
+            <button class="btn btn-comment" type="submit">Comment</button>
+          </form>
+
+        <div *ngFor="let comment of post?.comments" class="comments">
+          <p>{{comment}}</p>
+        </div>
+        <div class="post-options">
+
+        </div>
       </div>
     </div>
-    <h1>{{post?.title}}</h1>
-    <div class="card">
-      <img src="{{post?.img}}">
-    </div>
-    <p class="post-description">{{post?.description}}</p>
+</div>
 
-    <div>
-
-        <div class="like-button">
-          <div class="heart-bg">
-            <div class="heart-icon" (click)="likePost()"></div>
-          </div>
-          <div class="likes-amount">{{post?.likes}}</div>
-        </div>
-
-    </div>
-      <form (ngSubmit)="addComment()" class="comment-form">
-        <input type="text" [(ngModel)]="newComment" name="newComment" placeholder="Write a comment...">
-        <button class="btn btn-comment" type="submit">Comment</button>
-      </form>
-
-    <div *ngFor="let comment of post?.comments" class="comments">
-      <p>{{comment}}</p>
-    </div>
-    <div class="post-options">
-      <button class="btn btn-edit" (click)="editButton()">Edit</button>
-      <button class="btn btn-delete" (click)="deleteButton()">Delete</button>
-    </div>
-  </div>
 </body>
-</html>
 
