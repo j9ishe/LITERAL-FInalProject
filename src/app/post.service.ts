@@ -1,9 +1,6 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Post } from './post.model';
-import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { BackEndService } from "./back-end.service";
-
 
 @Injectable({
   providedIn:'root'
@@ -22,7 +19,6 @@ export class PostService {
   }
   deletePost(index: number) {
     this.listofpost.splice(index, 1);
-
   }
   getSpecPost(index: number) {
     return this.listofpost[index];
