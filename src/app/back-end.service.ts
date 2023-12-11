@@ -31,7 +31,6 @@ export class BackEndService {
           });
           this.postservice.setPosts(listofpost);
           this.postservice.listChangeEvent.emit(listofpost);
-          console.log('listofpost')
         }));
 
     }

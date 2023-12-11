@@ -1,0 +1,178 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.card{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+.card-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.facebook-post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 500px;
+  width: 100%; /* Adjust the width as needed */
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.post-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.post-info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.post-info p {
+  margin: 0;
+  color: #888;
+}
+
+h1, p.post-description {
+  margin-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.btn-like,
+.btn-comment {
+  background-color: #3b5998;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-like:hover,
+.btn-comment:hover {
+  background-color: #293f6e;
+}
+
+.comment-form {
+  display: flex;
+  flex-grow: 1;
+}
+
+.comment-form input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.btn-comment {
+  background-color: #4caf50;
+}
+
+.btn-comment:hover {
+  background-color: #45a049;
+}
+
+.comments {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.post-options {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-edit,
+.btn-delete {
+  background-color: #f2b632;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+  background-color: #d49a25;
+}
+.post-likes {
+  margin-top: 15px;
+}
+
+.post-comments {
+  margin-top: 15px;
+}
+.like-button .heart-icon {
+  height: 100px;
+  width: 100px;
+  background: url("src/assets/images/img.png");
+  background-position: left;
+  cursor: pointer;
+  position: absolute;;
+}
+
+.like-button .heart-icon.liked {
+  animation: like-anim 0.7s steps(28) forwards;
+}
+
+@keyframes like-anim {
+  to {
+    background-position: right;
+  }
+}
+
+.like-button .heart-bg {
+  background: rgba(255, 192, 200, 0);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease;
+}
+
+.like-button .heart-bg:hover {
+  background: rgba(255, 192, 200, 0.7);
+}
+
+.like-button {
+  display: flex;
+  align-items: center;
+}
+
+.like-button .likes-amount {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  color: #888;
+  font-weight: 900;
+  margin-left: 6px;
+}

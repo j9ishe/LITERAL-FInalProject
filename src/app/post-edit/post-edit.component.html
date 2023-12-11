@@ -7,44 +7,44 @@
   <title>Bootstrap Example</title>
 </head>
 <body>
-  <h3 class="font-weight-bold" *ngIf="editMode==false">Create Post</h3>
-  <h3 class="font-weight-bold"  *ngIf="editMode==true">Edit Post</h3>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-          <label class="font-weight-bold">Title</label>
-          <input
-              type="text"
-              class="form-control"
-              placeholder="title"
-              formControlName="title"
-          />
+  <div class="post-container">
+    <h1 class *ngIf="editMode==false">Create Post</h1>
+    <h2 class="font-weight-bold"  *ngIf="editMode==true">Edit Post</h2>
+    <form class="post-form" id="postForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <textarea
+        id="postContent"
+        placeholder="Title"
+        type="text"
+        class="form-control"
+        formControlName="title">
+      </textarea>
+
+        <textarea
+        id="postContent"
+        placeholder="Image Path"
+        type="text"
+        class="form-control"
+        formControlName="imgPath">
+      </textarea>
+      <img src="{{form.value.imgPath}}" class="img-responsive"/>
+
+        <textarea
+        id="postContent"
+        placeholder="Description"
+        type="text"
+        class="form-control"
+        formControlName="description">
+      </textarea>
+      <div class="btn1">
+        <button type="submit" [disabled]="form.invalid">Save</button>
+      </div>
+      <div class="btn2">
+        <button type="reset" >Clear</button>
       </div>
 
-      <div class="form-group">
-          <label class="font-weight-bold">Image Path</label>
-          <input
-              type="text"
-              class="form-control"
-              placeholder="img path"
-              formControlName="imgPath"
-          />
-              <img src="{{form.value.imgPath}}" class="img-responsive"/>
-      </div>
 
-      <div class="form-group">
-          <label class="font-weight-bold">Description</label>
-          <textarea
-              type="text"
-              class="form-control"
-              placeholder="description"
-              formControlName="description"
-          ></textarea>
-      </div>
-
-      <button type="submit" [disabled]="form.invalid">Save</button>
-      <button type="reset" >Clear</button>
   </form>
-
+</div>
 </body>
 </html>
 

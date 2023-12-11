@@ -13,13 +13,12 @@
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  background: rgb(0, 0, 0,0.4);
+  background: rgba(255, 255, 255, .1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgb(180, 132, 108,0.3);
-  z-index: 10;
+  border-bottom: 2px solid rgba(0, 0, 0, .1);
 }
 .header::before {
   content: '';
@@ -28,56 +27,96 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgb(250, 246, 240), transparent);
+  background: linear-gradient(90deg, transparent, rgb(229, 212, 255), transparent);
   transition: 1s;
 }
 .header:hover::before {
   left: 100%;
 }
 .logo {
-  color: #F4EAE0;
-  font-size: 25px;
+  color: #D0A2F7;
+  font-size: 35px;
   text-decoration: none;
   font-weight: 600;
   cursor: default;
+  font-style: italic;
+  padding: 15px;
+  background-size: 500%;
+  background-image: linear-gradient(to left, #F1EAFF, #D0A2F7, #A076F9, #6528F7);
+  background-clip: text;
+  color: transparent;
+  animation: bg-animation 5s infinite alternate;
 }
-.navbar button {
-  margin-right: 100px;
+@keyframes bg-animation{
+  0%{
+    background-position: left;
+  }
+  100%{
+    background-position: right;
+  }
 }
-.navbar a:hover {
-  color: rgb(236, 205, 180,0.2);
-}
-.button-74 {
-  background-color: #fbeee0;
-  border: 2px solid #422800;
-  border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
-  cursor: pointer;
+
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #A076F9;
+  color: #A076F9;
   display: inline-block;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
-  line-height: 50px;
-  text-align: center;
+  font-size: 20px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
   text-decoration: none;
+  cursor: pointer;
+  background: #fff;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  border-width: 3px;
+  border-radius: 10px;
 }
 
-.button-74:hover {
-  background-color: #fff;
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
 }
 
-.button-74:active {
-  box-shadow: #422800 2px 2px 0 0;
-  transform: translate(2px, 2px);
+.button-57 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
 }
 
-@media (min-width: 768px) {
-  .button-74 {
-    min-width: 120px;
-    padding: 0 25px;
-  }
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #A076F9;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
 }

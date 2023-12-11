@@ -2,16 +2,14 @@ import { EventEmitter, Injectable } from "@angular/core";
 import { Post } from './post.model';
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
+import { BackEndService } from "./back-end.service";
 
 
 @Injectable({
   providedIn:'root'
 })
-export class PostService {
-  fetchData(): Observable<Post[]>{
-    return this.http.get<Post[]>('https://cc105-50dd5-default-rtdb.asia-southeast1.firebasedatabase.app/post.json')
 
-  }
+export class PostService {
 
   listChangeEvent: EventEmitter<Post[]> = new EventEmitter();
   listofpost: Post[] = [];
@@ -24,6 +22,7 @@ export class PostService {
   }
   deletePost(index: number) {
     this.listofpost.splice(index, 1);
+
   }
   getSpecPost(index: number) {
     return this.listofpost[index];
@@ -39,7 +38,5 @@ export class PostService {
     this.listChangeEvent.emit(listofpost);
 
   }
-  constructor( private http: HttpClient) { }
-
 }
 
